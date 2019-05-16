@@ -1,0 +1,114 @@
+:root{
+	--card-section-bg:#fff;
+}
+
+html{
+	margin:0;
+	background:#8c94a3
+}
+
+body{
+	margin:8px;
+	background:transparent
+}
+
+body,html{
+	padding:0;
+	text-align:left;
+	color:#212529
+}
+
+.card{
+	padding:8px;
+	margin:0;
+	border:0;
+	display:flex;
+	flex-wrap:wrap;
+	height:auto;
+	user-select:none;
+	border-radius:5px;
+	font:500 16px/26px Roboto,sans-serif;
+	box-shadow:2px 2px 6px 0 #627392,-1px 0 5px 0 #777b82;
+	background:#d5d8df
+}
+
+.card label{
+	display:block;
+	padding:0 9px;
+	margin:0;
+	width:auto;
+	z-index:2;
+	text-align:center;
+	text-align-last:center;
+	vertical-align:bottom;
+	cursor:pointer;
+	color:#c9c9c9;
+}
+
+.card > :checked + label{
+	cursor:default;
+	color:#473d8e;
+	background:var(--card-section-bg);
+	border:1px solid #ddd;
+	border-bottom:1px solid var(--card-bg);
+}
+
+.card > section{
+	font: 500 13px/15px sans-serif;
+	border-radius:0 0 6px 6px;
+	border:0;
+	margin:0 -8px -8px -8px;
+	padding:8px;
+	width:100%;
+	order:1;
+	border-top:1px solid #c7c8ca;
+	background:var(--card-section-bg)
+}
+
+.card > section,
+.card [name="tab"]{
+	display:none
+}
+
+.card > :checked + label + section{
+	display:block
+}
+
+@media (max-width: 360px){
+	.card{
+		flex-direction:column;
+	}
+	.card label{
+		border:1px solid #b9c2d2;
+		border-bottom:1px solid #cad0db;
+		box-shadow:inset 2px 1px 3px 0px #dedee0;
+		background:#d4d6dd;
+		color:#929098;
+	}
+	.card label:first-of-type{
+		border-radius:6px 6px 0 0;
+	}
+	.card > :checked + label{
+		box-shadow:inset -1px -2px 0px 0px #eeeef4;
+	}
+	.card > :checked + label:last-of-type{
+		box-shadow:inset -2px 1px 0px 0px #e9e9f0;
+		position:relative;
+		top:1px;
+	}
+}
+
+@media (min-width: 361px){
+	.card label{
+		border-radius:6px 6px 0 0;
+		position:relative;
+		top:1px;
+		border:1px solid #b9c2d2;
+		border-bottom:1px solid #cad0db;
+		box-shadow:inset 2px 1px 3px 0px #dedee0;
+		background:#f2f2f2 linear-gradient(to bottom, #eef2f8 0%,#e3e4e6 100%);
+	}
+	.card > :checked + label{
+		box-shadow:inset -2px 1px 0px 0px #e9e9f0;
+	}
+}
